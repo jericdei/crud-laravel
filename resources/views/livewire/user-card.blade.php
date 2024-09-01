@@ -6,11 +6,8 @@ use function Livewire\Volt\{state};
 state(['user' => new User()]);
 ?>
 
-<div class="bg-zinc-800 p-4 rounded-xl">
-    <div class="flex justify-between">
-        <p>{{ $user->full_name }}</p>
-        <p>{{ $user->age }} years old</p>
-    </div>
+<div class="bg-zinc-800 p-4 rounded-xl hover:bg-zinc-700 cursor-pointer">
+    <p>{{ $user->full_name }}, {{ $user->age }}</p>
 
     <small class="text-zinc-400">{{ $user->email }}</small>
 </div>

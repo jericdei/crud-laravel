@@ -11,7 +11,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-100">
-    <div class="container mx-auto py-16">{{ $slot }}</div>
+    <div class="container mx-auto py-16 px-8">{{ $slot }}</div>
     <livewire:scripts />
 </body>
 </html>
