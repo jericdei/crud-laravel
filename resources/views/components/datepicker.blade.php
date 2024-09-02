@@ -1,7 +1,7 @@
 @props([
-    "name" => null,
-    "label" => null,
-    "model" => null,
+    'name' => null,
+    'label' => null,
+    'model' => null,
 ])
 
 <label
@@ -27,6 +27,7 @@
 
     <input
         datepicker
+        datepicker-autohide
         datepicker-format="yyyy-mm-dd"
         :id="$name"
         :name="$name"

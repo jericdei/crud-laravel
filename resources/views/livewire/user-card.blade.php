@@ -2,10 +2,10 @@
 
 use function Livewire\Volt\{state};
 
-state(["user"]);
+state(['user']);
 
 $deleteUser = function () {
-    $this->dispatch("deleteUser", $this->user);
+    $this->dispatch('deleteUser', $this->user);
 };
 ?>
 
@@ -21,13 +21,17 @@ $deleteUser = function () {
     <div class="invisible flex items-start gap-4 group-hover:visible">
         <x-button
             type="link"
-            href="/users/{{ $user->id }}/edit"
+            variant="text"
+            href="/users/form?id={{ $user->id }}"
             wire:navigate
         >
             <i class="ri-edit-2-fill text-cyan-200 dark:text-cyan-700"></i>
         </x-button>
 
-        <x-button wire:click="deleteUser">
+        <x-button
+            wire:click="deleteUser"
+            variant="text"
+        >
             <i class="ri-delete-bin-5-fill text-red-400 dark:text-red-700"></i>
         </x-button>
     </div>

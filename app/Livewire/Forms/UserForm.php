@@ -26,7 +26,11 @@ class UserForm extends Form
     {
         $this->validate();
 
-        User::find($this->id)->update($this->all());
+        if ($this->id) {
+            User::find($this->id)->update($this->all());
+        } else {
+            User::create($this->all());
+        }
 
         return to_route('users.index');
     }

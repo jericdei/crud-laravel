@@ -3,17 +3,17 @@
 use App\Livewire\Forms\UserForm;
 use function Livewire\Volt\{state, form, mount};
 
-state(["user" => null]);
+state(['user' => null]);
 
 form(UserForm::class);
 
 mount(function () {
-    $this->form->fill($this->user);
+    $this->form->fill($this->user ?? []);
 });
 
 $submit = function () {
     $this->form->store();
-    $this->redirect("/users", navigate: true);
+    $this->redirect('/users', navigate: true);
 };
 ?>
 
@@ -51,9 +51,14 @@ $submit = function () {
         </div>
     </div>
 
-    <div>
+    <div class="flex justify-end gap-2">
         <x-button
-            class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-300 disabled:text-zinc-700"
+            type="link"
+            href="/users"
+            variant="error"
+        >Cancel</x-button>
+
+        <x-button
             type="submit"
             :disabled="$errors->any()"
         >Submit</x-button>

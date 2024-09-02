@@ -4,7 +4,6 @@
     "bracketSpacing": true,
     "printWidth": 80,
     "semi": true,
-    "singleQuote": false,
     "sortTailwindcssClasses": true,
     "singleAttributePerLine": true,
     "plugins": ["prettier-plugin-tailwindcss", "@shufo/prettier-plugin-blade"],
