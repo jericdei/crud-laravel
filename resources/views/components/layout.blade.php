@@ -1,7 +1,7 @@
 @props(["title" => "Laravel"])
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
     <livewire:styles />
-    @vite("resources/css/app.css", "resources/js/app.js")
+    @vite(["resources/css/app.css", "resources/js/app.js"])
 </head>
 
-<body class="bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-100">
-    <div class="container mx-auto px-8 py-16">{{ $slot }}</div>
+<body
+    class="min-h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
+    <div class="container mx-auto px-8 py-16">
+        <h1 class="mb-8 text-3xl font-bold">{{ $title }}</h1>
+        {{ $slot }}
+    </div>
+
     <livewire:scripts />
 </body>
 

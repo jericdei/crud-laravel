@@ -16,6 +16,10 @@ class User extends Authenticatable
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'birthday' => 'date:Y-m-d',
+    ];
+
     public function fullName(): Attribute
     {
         return Attribute::make(

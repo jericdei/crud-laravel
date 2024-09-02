@@ -17,9 +17,11 @@ on([
 ]);
 ?>
 
-<div
-    class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+<div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
     @foreach ($users as $user)
-        <livewire:user-card :user="$user" :key="$user->id" />
+        <livewire:user-card
+            :user="$user"
+            :key="$user->id"
+        />
     @endforeach
 </div>
