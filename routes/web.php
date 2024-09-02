@@ -3,7 +3,9 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/', fn() => to_route('users.index'));
+
+Route::get('/users', function () {
     return view('index');
 })->name('users.index');
 

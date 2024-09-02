@@ -13,6 +13,7 @@ mount(function () {
 
 $submit = function () {
     $this->form->store();
+    $this->redirect("/users", navigate: true);
 };
 ?>
 
@@ -20,8 +21,6 @@ $submit = function () {
     class="flex flex-col gap-4"
     wire:submit.prevent="submit"
 >
-    <div>{{ json_encode($this->form->all()) }}</div>
-
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <x-input
             name="form.first_name"

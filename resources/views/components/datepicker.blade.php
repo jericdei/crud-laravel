@@ -27,7 +27,6 @@
 
     <input
         datepicker
-        datepicker-autohide
         datepicker-format="yyyy-mm-dd"
         :id="$name"
         :name="$name"
